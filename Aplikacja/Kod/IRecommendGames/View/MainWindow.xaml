@@ -1,0 +1,27 @@
+﻿<Window x:Class="IRecommendGames.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IRecommendGames"
+        xmlns:viewmodel="clr-namespace:IRecommendGames.ViewModel"
+        xmlns:views="clr-namespace:IRecommendGames.View"
+        mc:Ignorable="d"
+        Title="IRecommendGames" Height="650" Width="1000" ResizeMode="NoResize"
+        WindowStyle="None">
+
+    <Window.DataContext>
+        <viewmodel:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid Background="#272537">
+        <views:LoginControl Visibility="{Binding LoginVisibility}" DataContext="{Binding .}"/>
+        <views:SignInControl Visibility="{Binding SignInVisibility}" DataContext="{Binding .}"/>
+        <views:Start Visibility="{Binding StartVisibility}" DataContext="{Binding .}"/>
+        <views:PreferenceForm Visibility="{Binding FormVisibility}" DataContext="{Binding .}"/>
+        <views:DatabaseFix Visibility="{Binding DbFixVisibility}" DataContext="{Binding .}"/>
+        <views:IRecommendGames Visibility="{Binding RecommendGamesVisibility}" DataContext="{Binding .}"/>
+        <views:HistoryControl Visibility="{Binding HistoryVisibility}" DataContext="{Binding .}"/>
+        <views:SettingsControl Visibility="{Binding SettingsVisibility}" DataContext="{Binding .}"/>
+    </Grid>
+</Window>
